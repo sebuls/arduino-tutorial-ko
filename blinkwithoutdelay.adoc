@@ -1,0 +1,119 @@
+---
+title: digitalWrite()
+categories: [ "Functions" ]
+subCategories: [ "디지털 입출력" ]
+---
+
+
+//
+:ext-relative: .html
+
+= digitalWrite()
+
+
+// OVERVIEW SECTION STARTS
+[#overview]
+--
+
+[float]
+=== 설명
+delay() 를 안 쓰고 깜빡이는 LED
+[%hardbreaks]
+
+[float]
+=== 문법
+
+
+
+[float]
+=== 매개변수
+
+
+
+
+[float]
+=== 반환
+없음
+
+--
+// OVERVIEW SECTION ENDS
+
+
+
+
+// HOW TO USE SECTION STARTS
+[#howtouse]
+--
+
+[float]
+=== 예제 코드
+
+이 코드는 디지털 핀 13을 `OUTPUT` 로 만들고  그것을 `HIGH` 와 `LOW` 사이를 1초 마다 토글한다.
+
+
+//[source,arduino]
+----
+const int ledPin =  LED_BUILTIN;//  내장 LED 핀 번호
+
+// Variables will change:
+int ledState = LOW;             // LED 를 설정
+
+// Generally, you should use "unsigned long" for variables that hold time
+// The value will quickly become too large for an int to store
+unsigned long previousMillis = 0;        // LED가 업데이트된 마지막 시간
+
+// constants won't change:
+const long interval = 1000;           // 깜빡일 간격 (밀리 초)
+
+void setup() {
+  // 디지털 핀을 출력으로:
+  pinMode(ledPin, OUTPUT);
+}
+
+void loop() {
+  // here is where you'd put code that needs to be running all the time.
+
+  // check to see if it's time to blink the LED; that is, if the difference
+  // between the current time and last time you blinked the LED is bigger than
+  // the interval at which you want to blink the LED.
+  unsigned long currentMillis = millis();
+
+  if (currentMillis - previousMillis >= interval) {
+    // LED 깜빡인 마지만 시간 저장
+    previousMillis = currentMillis;
+
+    // LED 가 꺼졌으면 켜고, 켜졌으면 끔:
+    if (ledState == LOW) {
+      ledState = HIGH;
+    } else {
+      ledState = LOW;
+    }
+
+    // LED를 ledState 변수로 맞춤:
+    digitalWrite(ledPin, ledState);
+  }
+}
+----
+[%hardbreaks]
+
+[float]
+=== 주의와 경고
+
+
+
+--
+// HOW TO USE SECTION ENDS
+
+
+// SEE ALSO SECTION
+[#see_also]
+--
+
+[float]
+=== 더 볼 것
+
+[role="example"]
+* #EXAMPLE# http://arduino.cc/en/Tutorial/DigitalPins[Tutorial: Digital Pins]
+
+--
+// SEE ALSO SECTION ENDS
