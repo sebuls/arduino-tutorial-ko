@@ -1,6 +1,6 @@
 ---
-title: digitalWrite()
-categories: [ "Functions" ]
+title: delay() 를 안 쓰고 깜빡이는 LED
+categories: [ "Tutorial" ]
 subCategories: [ "디지털 입출력" ]
 ---
 
@@ -8,7 +8,7 @@ subCategories: [ "디지털 입출력" ]
 //
 :ext-relative: .html
 
-= digitalWrite()
+= delay() 를 안 쓰고 깜빡이는 LED
 
 
 // OVERVIEW SECTION STARTS
