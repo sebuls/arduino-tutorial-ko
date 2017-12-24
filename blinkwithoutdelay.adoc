@@ -47,11 +47,9 @@ delay() 를 안 쓰고 깜빡이는 LED
 
 [float]
 === 예제 코드
-
 이 코드는 디지털 핀 13을 `OUTPUT` 로 만들고  그것을 `HIGH` 와 `LOW` 사이를 1초 마다 토글한다.
 
-
-//[source,arduino]
+[source,arduino]
 ----
 const int ledPin =  LED_BUILTIN;//  내장 LED 핀 번호
 
